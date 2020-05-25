@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import myproject.BankAccount;
 public class BankAccountTests {
  @Test
  public void deposit() {
@@ -13,12 +12,15 @@ bankaccount.deposit(5000);
 assertEquals(5000, bankaccount.getBalance());
  }
  @Test
- public void withdraw() {
-//Implement later
+ public void withdraw(long value ) {
+ if (value > 0) {
+ this.balance -= value;
+							            }					            
  }
  @Test
- public void withdrawForeign() {
-//Implement later
+ public void withdrawForeign(long foreignValue, double conversionfactor ) {
+ long newValue = (long) Math.ceil(foreignValue * conversionfactor);
+ balance -= newValue;
  }
 }
- 
+
